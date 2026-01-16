@@ -1,4 +1,3 @@
-from google.protobuf.internal.well_known_types import Duration
 import pandas as pd
 import streamlit as st
 import joblib as jb
@@ -88,5 +87,6 @@ if st.button("Predict Flight Price"):
     st.success(f"💰 Predicted Flight Price: Rs. {round(prediction[0], 2)}")
 
  
+
 
 
