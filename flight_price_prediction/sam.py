@@ -10,7 +10,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Load model and columns
-model = jb.load(os.path.join(BASE_DIR, 'flight_prediction_rf.pkl'))
+model = jb.load(os.path.join(BASE_DIR, 'flight_prediction_rff.pkl'))
 expected_cols = jb.load(os.path.join(BASE_DIR, 'columns.pkl'))
 
 
@@ -92,6 +92,7 @@ if st.button("Predict Flight Price"):
     st.success(f"💰 Predicted Flight Price: Rs. {round(prediction[0], 2)}")
 
  
+
 
 
 
