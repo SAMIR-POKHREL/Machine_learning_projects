@@ -3,13 +3,16 @@ import streamlit as st
 import joblib as jb
 
 
-BASE_DIR = os.path.dirname(__file__)
+import os
 
-# model=jb.load(r'flight_price_prediction/columns.pkl')
-# expected_cols=jb.load(r'C:\Users\samir\Documents\proj\columns.pkl')
-model = jb.load(os.path.join(BASE_DIR, "flight_prediction_rff.pkl"))
 
-expected_columns = jb.load(os.path.join(BASE_DIR,"columns.pkl"))
+# Get current file's directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Load model and columns
+model = jb.load(os.path.join(BASE_DIR, 'flight_prediction_rf.pkl'))
+expected_cols = jb.load(os.path.join(BASE_DIR, 'columns.pkl'))
+
 
 
 st.title("Flight price prediction via samir")
@@ -89,6 +92,7 @@ if st.button("Predict Flight Price"):
     st.success(f"💰 Predicted Flight Price: Rs. {round(prediction[0], 2)}")
 
  
+
 
 
 
